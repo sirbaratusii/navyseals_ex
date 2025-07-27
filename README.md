@@ -9,7 +9,7 @@ This modification serves as an unofficial patch. Which aims to add in quality of
 - [ ] Automatic reloading for weapons
 - [ ] Proper support for Deathmatch 3 rules
 - [X] Map cycle via maplist.txt
-- [ ] Randomize weapon spawns upon loading
+- [ ] Randomize weapon spawns (PSG-1, MP5 had additional pickups, etc)
 - [ ] Chasecam feature
 
 # Known issues
