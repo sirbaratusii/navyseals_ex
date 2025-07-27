@@ -8,9 +8,10 @@ This serves as a unofficial patch, aiming to add in some quality of life feature
 - [ ] Implement support for right-handed and centered weapon views. (Original was only left-handed)
 - [ ] Automatic reloading for weapons
 - [ ] Proper support for Deathmatch 3 rules
-- [ ] Map cycle via maplist.txt
+- [X] Map cycle via maplist.txt
 
 # Credits
 * Minh Le for creating this modification
 * id Software for making Quake
-* [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting
+* [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting\
+* erysdren for Implementing a map cycle (Deathmatch)

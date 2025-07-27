@@ -647,14 +647,67 @@ RULES
 ===============================================================================
 */
 
+/* ERYSDREN 2025-05-02 */
+float(string filename, float mode, optional float mmapminsize) fopen = #110;
+void(float fhandle) fclose = #111;
+string(float fhandle) fgets = #112;
+int(float fhandle, optional int newoffset) fseek = #0:fseek;
+
 /*
 go to the next level for deathmatch
 only called if a time or frag limit has expired
 */
 void() NextLevel =
 {
-	local entity o;
+	entity o;
 
+	if (nextmap != "")
+		return; // already done
+
+	// open our maplist file
+	float f = fopen("maplist.txt", 0);
+	if (f < 0)
+		goto the_old_way;
+
+	// spawn our changer
+	o = spawn();
+	o.map = __NULL__;
+
+	// search for a line
+	for (string line = fgets(f); line != __NULL__; line = fgets(f))
+	{
+		// found our map in the list
+		if (mapname == line)
+		{
+			// get next line
+			line = fgets(f);
+
+			// no next line, reached the end of rotation
+			if (line == __NULL__)
+			{
+				fseek(f, 0);
+				line = fgets(f);
+			}
+
+			nextmap = o.map = line;
+			break;
+		}
+	}
+
+	// close file
+	fclose(f);
+
+	// give up
+	if (o.map == __NULL__)
+		goto the_old_way;
+
+	// do changelevel
+	o.think = execute_changelevel;
+	o.nextthink = time + 0.1;
+
+	return;
+
+the_old_way:
 	if (mapname == "start")
 	{
 		if (!cvar("registered"))
