@@ -9,7 +9,8 @@ This modification serves as an unofficial patch. Which aims to add in quality of
 - [ ] Automatic reloading for weapons
 - [ ] Proper support for Deathmatch 3 rules
 - [X] Map cycle via maplist.txt
-- [ ] Attempt to seperate multiplayer server related code to another .qc?
+- [ ] Randomize weapon spawns upon loading
+- [ ] Chasecam feature
 
 # Known issues
 - Creating a listen server will crash FTEQW (Does not crash QUAKE.EXE v1.08 however)
