@@ -2,7 +2,7 @@
 Navy SEALs is a partial conversion for Quake developed by Minh Le (Gooseman), SkullHunter, William. This modification would be one of the precursors to one of the most popular competitive shooters of all time, Counter-Strike.
 
 # What is the goal of this project?
-This serves as a unofficial patch, aiming to add in some quality of life features. This also serves as a starting point for me to learn more about QuakeC.
+This modification serves as an unofficial patch. Which aims to add in quality of life features. This also serves as a starting point for me to learn more about QuakeC.
 
 # To-do
 - [ ] Implement support for right-handed and centered weapon views. (Original was only left-handed)
@@ -11,7 +11,14 @@ This serves as a unofficial patch, aiming to add in some quality of life feature
 - [X] Map cycle via maplist.txt
 
 # Credits
+<<<<<<< HEAD
 * Minh Le for creating this modification
 * id Software for making Quake
 * [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting\
 * erysdren for Implementing a map cycle (Deathmatch)
+=======
+- Minh Le for creating this modification
+- id Software for making Quake
+- [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting
+- Spike for the FTEQW engine, which allowed this modification to be playable with QuakeWorld clients
+>>>>>>> 880111263056dd0b76991811c5d084017abc51fb
