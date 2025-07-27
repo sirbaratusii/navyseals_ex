@@ -11,14 +11,7 @@ This modification serves as an unofficial patch. Which aims to add in quality of
 - [X] Map cycle via maplist.txt
 
 # Credits
-<<<<<<< HEAD
 * Minh Le for creating this modification
 * id Software for making Quake
 * [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting\
 * erysdren for Implementing a map cycle (Deathmatch)
-=======
-- Minh Le for creating this modification
-- id Software for making Quake
-- [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting
-- Spike for the FTEQW engine, which allowed this modification to be playable with QuakeWorld clients
->>>>>>> 880111263056dd0b76991811c5d084017abc51fb
