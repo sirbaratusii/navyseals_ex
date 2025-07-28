@@ -2335,20 +2335,35 @@ void() ImpulseCommands =
 	{
 	self.hand = self.hand = 0;
 	sprint (self, "Weapon View : Left");
+    if (self.reload == 1)
+	{
+		return;
+	}
+	else
 	W_SetCurrentAmmo();
 	} 
 
 	if (self.impulse == 207)
 	{
 	self.hand = self.hand = 1;
-	sprint (self, "Weapon View : Right");	
+	sprint (self, "Weapon View : Right");
+    if (self.reload == 1)
+	{
+		return;
+	}
+	else
 	W_SetCurrentAmmo();
 	} 
 
 	if (self.impulse == 208)
 	{
 	self.hand = self.hand = 2;
-	sprint (self, "Weapon View : Center");	
+	sprint (self, "Weapon View : Center");
+    if (self.reload == 1)
+	{
+		return;
+	}
+	else
 	W_SetCurrentAmmo();
 	} 
 
