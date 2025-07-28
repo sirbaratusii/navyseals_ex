@@ -4,6 +4,7 @@ void () GrenadeExplode;
 void () barrett_precache =
  {
    precache_model2 ("progs/v_barret.mdl");
+   precache_model2 ("progs/v_barret_r.mdl");
    precache_sound2 ("weapons/barrett.wav");
  };
 

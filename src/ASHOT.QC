@@ -1,6 +1,7 @@
 void () ashot_precache =
  {
    precache_model2 ("progs/v_ashot.mdl");
+   precache_model2 ("progs/v_ashot_r.mdl");
    precache_sound2 ("weapons/ashotfir.wav");
    precache_sound2 ("weapons/ashotcok.wav");
 };

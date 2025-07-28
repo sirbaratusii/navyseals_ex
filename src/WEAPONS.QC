@@ -994,7 +994,16 @@ void() W_SetCurrentAmmo =
                     self.currentammo = self.mk23clip;
                   else
                     self.currentammo = self.ammo_shells;
+		// support for handedness
+		  if (self.hand == 1)
+		  {
+		  self.weaponmodel = "progs/v_mk23_r.mdl";
+		  }
+		  else if (self.hand == 0)
+		  {
 		  self.weaponmodel = "progs/v_mk23.mdl";
+		  }
+		  
 		  self.weaponframe = 0;
                   if (!self.sight_active)
                   {
@@ -1018,7 +1027,16 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.mossclip;
                 else
                   self.currentammo = self.ammo_shells;
-                self.weaponmodel = "progs/v_moss.mdl";
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_moss_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_moss.mdl";
+		}
+
 		self.weaponframe = 0;
                 if (!self.use_clip_as_ammo)
                   self.items = self.items | IT_SHELLS;
@@ -1029,7 +1047,17 @@ void() W_SetCurrentAmmo =
               self.currentammo = self.mp5clip;
             else
               self.currentammo = self.ammo_nails;
-            self.weaponmodel = "progs/v_mp5.mdl";
+
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_mp5_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_mp5.mdl";
+		}
+			
             self.weaponframe = FALSE;
         if (!self.sight_active)
         {
@@ -1053,7 +1081,17 @@ void() W_SetCurrentAmmo =
               self.currentammo = self.mp5clip;
             else
               self.currentammo = self.ammo_nails;
-            self.weaponmodel = "progs/v_mp5sd.mdl";
+
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_mp5sd_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_mp5sd.mdl";
+		}
+
             self.weaponframe = FALSE;
         if (!self.sight_active)
         {
@@ -1074,7 +1112,17 @@ void() W_SetCurrentAmmo =
         else if (self.weapon == WP_ASHOT)
 	{
                 self.currentammo = self.ammo_shells;
-                self.weaponmodel = "progs/v_ashot.mdl";
+				
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_ashot_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_ashot.mdl";
+		}
+				
 		self.weaponframe = 0;
                 if (!self.use_clip_as_ammo)
                   self.items = self.items | IT_SHELLS;
@@ -1085,7 +1133,17 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.m16clip;
                 else
                   self.currentammo = self.ammo_nails;
-            self.weaponmodel = "progs/v_m16.mdl";
+
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_m16_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_m16.mdl";
+		}
+
 		self.weaponframe = 0;
                 if (!self.sight_active)
                 {   
@@ -1107,7 +1165,17 @@ void() W_SetCurrentAmmo =
         else if (self.weapon == WP_M16RAW)
 	{
                 self.currentammo = self.ammo_rockets;
-                self.weaponmodel = "progs/v_m16raw.mdl";
+				
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_m16raw_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_m16raw.mdl";
+		}
+				
 		self.weaponframe = 0;
                 if (!self.use_clip_as_ammo)
                   self.items = self.items | IT_ROCKETS;
@@ -1118,7 +1186,17 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.psg1clip;
                 else
                   self.currentammo = self.ammo_rockets;
-                self.weaponmodel = "progs/v_psg1.mdl";
+				
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_psg1_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_psg1.mdl";
+		}
+				
 		self.weaponframe = 0;
                 if (!self.sight_active)
                 {
@@ -1146,7 +1224,17 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.psg1clip;
                 else
                   self.currentammo = self.ammo_rockets;
-                self.weaponmodel = "progs/v_barret.mdl";
+				
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_barret_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_barret.mdl";
+		}
+								
 		self.weaponframe = 0;
                 if (!self.sight_active)
                 {
@@ -1174,7 +1262,17 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.m60clip;
                 else
                   self.currentammo = self.ammo_cells;
-                self.weaponmodel = "progs/v_m60.mdl";
+				
+		// support for handedness
+		if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_m60_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_m60.mdl";
+		}				
+				
                 if (self.m60clip == 0)
                   self.weaponframe = 15;
                 else
@@ -2188,6 +2286,18 @@ void() ImpulseCommands =
      }
    }
 
+// Hand cycle (206 = left 207 = right 208 = center)
+	if (self.impulse == 206)
+	{
+	self.hand = self.hand = 0;
+	W_SetCurrentAmmo();
+	} 
+
+	if (self.impulse == 207)
+	{
+	self.hand = self.hand = 1;
+	W_SetCurrentAmmo();
+	} 
 
 /**************************** PLAYER SKIN SELECT **********************************/
 

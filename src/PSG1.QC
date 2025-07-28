@@ -4,6 +4,7 @@ void () GrenadeExplode;
 void () psg1_precache =
  {
    precache_model2 ("progs/v_psg1.mdl");
+   precache_model2 ("progs/v_psg1_r.mdl");
    precache_model2 ("progs/psg1.mdl");
    precache_sound2 ("weapons/psg1fire.wav");
    precache_sound2 ("weapons/clipslap.wav");

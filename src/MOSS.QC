@@ -4,6 +4,7 @@ void () moss_precache =
   precache_sound2 ("weapons/cock2.wav");
   precache_sound2 ("weapons/shotfire.wav");
   precache_model2 ("progs/v_moss.mdl");
+  precache_model2 ("progs/v_moss_r.mdl");
   precache_model2 ("progs/sshell.mdl");
  };
 
