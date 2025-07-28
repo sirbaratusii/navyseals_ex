@@ -2270,47 +2270,45 @@ void() ImpulseCommands =
       } 
 	  
 /******************* PSG-1 Zoom Feature ************************/
-      if ( (self.impulse == 102) && (self.weapon == WP_PSG1 ) )
+      if ( (self.impulse == 101) && (self.weapon == WP_PSG1 ) )
        {
         if (self.zoomlevel == 1)
          {
+		  self.zoomlevel == 2;
           player_zoomb ();
          }
         if (self.zoomlevel == 0)
          {
-          player_zoom ();
+          self.zoomlevel == 1;
+		  player_zoom ();
          }
        }
-      if ( (self.impulse == 103) && (self.weapon == WP_PSG1 ) &&
-           (self.zoomlevel != 0) )
+      if ( (self.impulse == 101) && (self.weapon == WP_PSG1 ) &&
+           (self.zoomlevel == 2) )
          {
 		  self.zoomlevel = 0;			 
           player_zoomout ();
-         }
-     
-
+         }    
 /******************* Barrett Zoom Feature ************************/
-      if ( (self.impulse == 102) && (self.weapon == WP_BARRETT) )
+      if ( (self.impulse == 101) && (self.weapon == WP_BARRETT ) )
        {
         if (self.zoomlevel == 1)
          {
-          self.zoomlevel = 2;
+		  self.zoomlevel == 2;
           player_zoomb ();
          }
         if (self.zoomlevel == 0)
          {
-          self.zoomlevel = 1;
-          player_zoom ();
+          self.zoomlevel == 1;
+		  player_zoom ();
          }
        }
-      if ( (self.impulse == 103) && (self.weapon == WP_BARRETT ) &&
-           (self.zoomlevel != 0) )
+      if ( (self.impulse == 101) && (self.weapon == WP_BARRETT ) &&
+           (self.zoomlevel == 2) )
          {
-          self.zoomlevel = 0;
+		  self.zoomlevel = 0;			 
           player_zoomout ();
-         }
-     
-
+         }      
 /**********************************************************************************/
 
 // Display Toggle

@@ -4,11 +4,7 @@ Menu for Squadbots (deathmatch 89, coop 0, teamplay 1) (limited to E1M1, etc)
 - impulse 100
 Reloads the current weapon
 - impulse 101
-Alt-fire modes from M16-A2, MP5/MP5-SD
-- impulse 102
-Zooms with PSG-1/Barrett (Not in GL)
-- impulse 103
-Zooms out
+Alt-fire modes from M16-A2, MP5/MP5-SD, PSG-1 and Barrett.
 - impulse 104
 Crouching
 - impulse 200
