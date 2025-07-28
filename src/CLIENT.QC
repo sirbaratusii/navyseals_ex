@@ -550,7 +550,6 @@ void() PutClientInServer =
 	self.invincible_time = 0;
         self.use_clip_as_ammo = TRUE;
         self.zoomlevel = 0;
-        stuffcmd(self, "fov 90"); // get out of zoom 
         DecodeLevelParms ();
 
 	W_SetCurrentAmmo ();
