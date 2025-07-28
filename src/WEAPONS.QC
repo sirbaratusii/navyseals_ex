@@ -1218,7 +1218,7 @@ void() W_SetCurrentAmmo =
 		// support for handedness
 		if (self.hand == 2)
 		{
-		self.weaponmodel = "progs/v_psg1_c.mdl";
+		self.weaponmodel = "progs/v_psg1_r.mdl";
 		}
 		else if (self.hand == 1)
 		{
@@ -1260,7 +1260,7 @@ void() W_SetCurrentAmmo =
 		// support for handedness
 		if (self.hand == 2)
 		{
-		self.weaponmodel = "progs/v_barret_c.mdl";
+		self.weaponmodel = "progs/v_barret_r.mdl";
 		}
 		else if (self.hand == 1)
 		{
@@ -1659,7 +1659,9 @@ void() W_ChangeWeapon =
 
       if (self.reload)
        return;
-	
+	  if (self.zoomlevel != 0)
+	   return;
+
 	if (self.impulse == 1)
 	{
           if (self.ammo_rockets < 1) 
@@ -2047,6 +2049,11 @@ void() ImpulseCommands =
 		W_ChangeWeapon ();
 
 	if (self.impulse == 9)
+		if (self.zoomlevel)
+		{
+			return;
+		}
+		else
 		CheatCommand ();
 	if (self.impulse == 10)
 		CycleWeaponCommand ();
@@ -2277,6 +2284,7 @@ void() ImpulseCommands =
       if ( (self.impulse == 103) && (self.weapon == WP_PSG1 ) &&
            (self.zoomlevel != 0) )
          {
+		  self.zoomlevel = 0;			 
           player_zoomout ();
          }
      
@@ -2333,7 +2341,7 @@ void() ImpulseCommands =
 	{
 	self.hand = self.hand = 0;
 	sprint (self, "Weapon View : Left");
-    if (self.reload == 1)
+    if (self.reload || self.zoomlevel)
 	{
 		return;
 	}
@@ -2345,7 +2353,7 @@ void() ImpulseCommands =
 	{
 	self.hand = self.hand = 1;
 	sprint (self, "Weapon View : Right");
-    if (self.reload == 1)
+    if (self.reload || self.zoomlevel)
 	{
 		return;
 	}
@@ -2357,7 +2365,7 @@ void() ImpulseCommands =
 	{
 	self.hand = self.hand = 2;
 	sprint (self, "Weapon View : Center");
-    if (self.reload == 1)
+    if (self.reload || self.zoomlevel)
 	{
 		return;
 	}

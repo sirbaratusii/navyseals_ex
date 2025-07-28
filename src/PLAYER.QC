@@ -681,10 +681,34 @@ void () zoomout6 = [2, zoomout7]
 void () zoomout7 = [2, zoomout8]
 {
    self.nextthink = time + 0.05;
-    if (self.weapon == WP_PSG1) 
-   self.weaponmodel = ("progs/v_psg1.mdl");
+    if (self.weapon == WP_PSG1)
+		// support for handedness
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_psg1_r.mdl";
+		}
+		else if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_psg1_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_psg1.mdl";
+		}
     else if (self.weapon == WP_BARRETT)
-   self.weaponmodel = ("progs/v_barret.mdl");
+		// support for handedness
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_barret_r.mdl";
+		}
+		else if (self.hand == 1)
+		{
+		self.weaponmodel = "progs/v_barret_r.mdl";
+		}
+		else if (self.hand == 0)
+		{
+		self.weaponmodel = "progs/v_barret.mdl";
+		}		
    self.weaponframe = 46;
    self.zoomlevel = 0;
    stuffcmd(self,"fov 80 \n");
