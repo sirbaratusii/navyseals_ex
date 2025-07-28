@@ -12,4 +12,4 @@ This modification serves as an unofficial patch. Which aims to add in QoL improv
 * Minh Le for creating this modification
 * id Software for making Quake
 * [DOSBox Deathmatch Club](http://www.dosboxdmclub.com/) Community for playtesting
-* erysdren for Implementing a map cycle (Deathmatch)
+* erysdren for implementing a map cycle (Deathmatch)
