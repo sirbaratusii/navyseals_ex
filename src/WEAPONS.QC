@@ -428,8 +428,19 @@ void() Sight_Think =
         src = (self.owner.origin + (v_forward * TE_LAVASPLASH));
         src_z = (self.owner.absmin_z + (self.owner.size_z * 0.800));
         src_y = (self.owner.absmin_y + (self.owner.size_y * 0.400));
-        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 110.000) - 
-        (v_right * 55) ) ),FALSE,self.owner);
+
+		if (self.owner.hand == 0)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 110.000)) -                   (v_right * 55)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 1)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 110.000)) -                   (v_right * 75)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 2)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 110.000)) -                   (v_right * 75)),FALSE,self.owner);
+        }
 
         self.lrange = vlen(self.owner.origin - trace_endpos);
         self.origin = (trace_endpos - (v_forward*10) );
@@ -440,11 +451,20 @@ void() Sight_Think =
         src = (self.owner.origin + (v_forward * TE_LAVASPLASH));
         src_z = (self.owner.absmin_z + (self.owner.size_z * 0.800));
         src_y = (self.owner.absmin_y + (self.owner.size_y * 0.400));
+		if (self.owner.hand == 0)
+		{
         traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 50.000)) -                   (v_right * 300)),FALSE,self.owner);
-
-        self.lrange = vlen(self.owner.origin - trace_endpos);
+        }
+		if (self.owner.hand == 1)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 50.000)) -                   (v_right * 320)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 2)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 50.000)) -                   (v_right * 320)),FALSE,self.owner);
+        }
+		self.lrange = vlen(self.owner.origin - trace_endpos);
         self.origin = (trace_endpos - (v_forward*10) );
-
        }
      
       if (self.owner.weapon == WP_M16)
@@ -452,13 +472,21 @@ void() Sight_Think =
         makevectors (self.owner.v_angle);
         src = (self.owner.origin + (v_forward * TE_LAVASPLASH));
         src_z = (self.owner.absmin_z + (self.owner.size_z * 0.800));
-        src_y = (self.owner.absmin_y + (self.owner.size_y * 0.400));
-        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 130.000)) -  
-        (v_right * 220)),FALSE,self.owner);
-
+        src_y = (self.owner.absmin_y + (self.owner.size_y * 0.400));		
+		if (self.owner.hand == 0)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 130.000)) -                   (v_right * 220)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 1)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 130.000)) -                   (v_right * 240)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 2)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 130.000)) -                   (v_right * 240)),FALSE,self.owner);
+        }
         self.lrange = vlen(self.owner.origin - trace_endpos);
         self.origin = (trace_endpos - (v_forward*10) );
-
        }
      
 
@@ -469,13 +497,24 @@ void() Sight_Think =
         src_z = (self.owner.absmin_z + (self.owner.size_z * 0.800));
         src_y = (self.owner.absmin_y + (self.owner.size_y * 0.400));
         if (self.owner.zoomlevel != 0)
-        {
+        {		
          traceline (src,src + (v_forward * IT_CELLS),FALSE,self.owner);
         }
         else
-        {
-          traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 90.000)) -
-          (v_right * 120)),FALSE,self.owner);
+        {	
+		if (self.owner.hand == 0)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 90.000)) -                   (v_right * 120)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 1)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 90.000)) -                   (v_right * 140)),FALSE,self.owner);
+        }
+		if (self.owner.hand == 2)
+		{
+        traceline (src,(((src + (v_forward * IT_CELLS)) - (v_up * 90.000)) -                   (v_right * 140)),FALSE,self.owner);
+        }
+			
         }
 
         self.origin = (trace_endpos - (v_forward*10) );
