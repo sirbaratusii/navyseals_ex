@@ -1362,6 +1362,7 @@ void() W_Attack =
         else
          {
             sound(self,CHAN_WEAPON,"weapons/mp5click.wav",TRUE,ATTN_NORM);
+			player_reload_mk23();
             self.attack_finished = time + 0.5;
          }
 	}
@@ -1375,6 +1376,7 @@ void() W_Attack =
         else 
          {
             sound (self,CHAN_WEAPON,"weapons/mp5click.wav",TRUE,ATTN_NORM);
+			player_reload_mossberg();
             self.attack_finished = (time + 0.400);
          }
 
@@ -1399,6 +1401,7 @@ void() W_Attack =
                   else 
                     {
                      sound (self,CHAN_WEAPON,"weapons/mp5click.wav",TRUE,ATTN_NORM);
+					 player_reload_mp5();
                      self.attack_finished = (time + 0.400);
                     }
 
@@ -1423,6 +1426,7 @@ void() W_Attack =
                   else 
                     {
                      sound (self,CHAN_WEAPON,"weapons/mp5click.wav",TRUE,ATTN_NORM);
+					 player_reload_mp5sd();
                      self.attack_finished = (time + 0.400);
                     }
 
@@ -1443,6 +1447,7 @@ void() W_Attack =
           else
            {
             sound(self,CHAN_WEAPON,"weapons/mp5click.wav",TRUE,ATTN_NORM);
+			player_reload_m16();
             self.attack_finished = time + 0.4;
            }
 	}
@@ -1461,6 +1466,7 @@ void() W_Attack =
           else
            {
             sound(self,CHAN_WEAPON,"weapons/mp5click.wav",1,ATTN_NORM);
+			player_reload_psg1();
             self.attack_finished = time + 0.5;
            }
 	}
@@ -1474,6 +1480,7 @@ void() W_Attack =
           else
            {
             sound(self,CHAN_WEAPON,"weapons/mp5click.wav",1,ATTN_NORM);
+			player_reload_barrett();
             self.attack_finished = time + 0.5;
            }
 	}
@@ -1494,6 +1501,7 @@ void() W_Attack =
          else
           {
             sound(self,CHAN_WEAPON,"weapons/mp5click.wav",1,ATTN_NORM);
+            player_reload_m60();
           }
 	}
 };
