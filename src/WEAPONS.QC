@@ -2120,7 +2120,7 @@ void() ImpulseCommands =
 	
 /******************** MP5 Full/Semiauto/Single switch sequence ***************/
     
-   if ( (self.impulse == 105) && (self.weapon == WP_MP5) )
+   if ( (self.impulse == 101) && (self.weapon == WP_MP5) )
     {
      if (self.semiauto == 0)
       {
@@ -2262,7 +2262,6 @@ void() ImpulseCommands =
          player_reload_mk23 ();
       } 
 	  
-	  	  
 /******************* PSG-1 Zoom Feature ************************/
       if ( (self.impulse == 102) && (self.weapon == WP_PSG1 ) )
        {
@@ -2303,7 +2302,6 @@ void() ImpulseCommands =
           player_zoomout ();
          }
      
-
 
 /**********************************************************************************/
 
