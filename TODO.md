@@ -5,6 +5,9 @@
 - [ ] Randomize weapon spawns (PSG-1, MP5 had additional pickups, etc)
 - [ ] Chasecam feature
 - [ ] Adjust the laser sight for right-handed and centered weapon view models.
+- [ ] Combine impulses 101, 102 and 105 to be treated as alt-firing modes.
+- [ ] Better handling of zooming
+- [ ] Fix up flashbang effect (based on the player's gamma instead of a fixed value)
 
 # Done
 - [X] Automatic reloading when clip is empty
