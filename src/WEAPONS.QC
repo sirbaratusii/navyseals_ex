@@ -2056,7 +2056,7 @@ void() ImpulseCommands =
 
 /******************** Mossberg reload sequence ***************************/
 
-    if ((self.impulse == 100) && (self.weaponmodel == "progs/v_moss.mdl"))
+    if ((self.impulse == 100) && (self.weapon == WP_MOSS))
      {
         if (self.mossclip == 8 || self.ammo_shells == 0 || self.reload || self.button0)
         {
@@ -2068,7 +2068,7 @@ void() ImpulseCommands =
     
 /******************** MP5 reload sequence*********************************/
 
-    if ( (self.impulse == 100.000) && (self.weaponmodel == "progs/v_mp5.mdl"))                        
+    if ( (self.impulse == 100.000) && (self.weapon == WP_MP5))                        
     {
       if (self.mp5clip == 30 || self.ammo_nails == 0 || self.reload || self.button0)
       {
@@ -2080,7 +2080,7 @@ void() ImpulseCommands =
 	
 /******************** MP5 Full/Semiauto/Single switch sequence ***************/
     
-   if ( (self.impulse == 105) && (self.weaponmodel == "progs/v_mp5.mdl") )
+   if ( (self.impulse == 105) && (self.weapon == WP_MP5) )
     {
      if (self.semiauto == 0)
       {
@@ -2108,7 +2108,7 @@ void() ImpulseCommands =
 
 /******************** MP5SD reload sequence*********************************/
 
-    if ( (self.impulse == 100.000) && (self.weaponmodel == "progs/v_mp5sd.mdl")) 
+    if ( (self.impulse == 100.000) && (self.weapon == WP_MP5SD)) 
     {
       if (self.mp5clip == 30 || self.ammo_nails == 0 || self.reload || self.button0)
       {
@@ -2119,7 +2119,7 @@ void() ImpulseCommands =
     }
 /******************** MP5SD Full/Semiauto/Single switch sequence ***************/
     
-   if ( (self.impulse == 105) && (self.weaponmodel == "progs/v_mp5sd.mdl") )
+   if ( (self.impulse == 105) && (self.weapon == WP_MP5SD) )
     {
      if (self.semiauto == 0)
       {
@@ -2145,9 +2145,10 @@ void() ImpulseCommands =
       }
     }
 
+/*
 /******************** M60 reload sequence*********************************/
 
-      if ((self.impulse == 100.00) && (self.weaponmodel == "progs/v_m60.mdl"))
+      if ((self.impulse == 100.00) && (self.weapon == WP_M60))
       {
         if (self.m60clip == 200 || self.ammo_cells == 0 || self.reload || self.button0)
         {
@@ -2158,7 +2159,7 @@ void() ImpulseCommands =
       }
 /******************** PSG-1 reload sequence*********************************/
 
-      if ( (self.impulse == 100.00) && (self.weaponmodel == "progs/v_psg1.mdl")) 
+      if ( (self.impulse == 100.00) && (self.weapon == WP_PSG1)) 
       {
         if (self.psg1clip == 20 || self.ammo_rockets == 0 || self.reload || self.button0)
         {
@@ -2169,7 +2170,7 @@ void() ImpulseCommands =
       }
 /****************** Barrett reload sequence*********************************/
 
-      if ( (self.impulse == 100.00) && (self.weaponmodel == "progs/v_barret.mdl"))
+      if ( (self.impulse == 100.00) && (self.weapon == WP_BARRETT))
       {
         if (self.psg1clip == 20 || self.ammo_rockets == 0 || self.reload || self.button0)
         {
@@ -2178,9 +2179,10 @@ void() ImpulseCommands =
         }
         else  player_reload_barrett();
       }
+
 /******************** M-16 reload sequence*********************************/
 
-      if ( (self.impulse == 100.00) && (self.weaponmodel == "progs/v_m16.mdl")) 
+      if ( (self.impulse == 100.00) && (self.weapon == WP_M16)) 
       {
          if (self.m16clip == 40 || self.ammo_nails == 0 || self.reload || self.button0)
          {
@@ -2190,7 +2192,7 @@ void() ImpulseCommands =
          else player_reload_m16 ();
       }
 /******************** M16 grenade sequence*********************************/
-      if ( (self.impulse == 101) && (self.weaponmodel == "progs/v_m16.mdl") && 
+      if ( (self.impulse == 101) && (self.weapon == WP_M16) && 
 	     (self.m16_grenade_finished < time) )
        {
         if (self.ammo_rockets > 2)
@@ -2210,7 +2212,7 @@ void() ImpulseCommands =
 
 
 /******************** Single MK23 reload sequence*********************************/
-      if ((self.impulse == 100) && (self.weaponmodel == "progs/v_mk23.mdl"))
+      if ((self.impulse == 100) && (self.weapon == WP_MK23))
       {
         if (self.mk23clip == 13 || self.ammo_shells == 0 || self.reload || self.button0)
         {
@@ -2219,6 +2221,8 @@ void() ImpulseCommands =
         }
          player_reload_mk23 ();
       } 
+	  
+	  	  
 /******************* PSG-1 Zoom Feature ************************/
       if ( (self.impulse == 102) && (self.weapon == WP_PSG1 ) )
        {
@@ -2290,12 +2294,14 @@ void() ImpulseCommands =
 	if (self.impulse == 206)
 	{
 	self.hand = self.hand = 0;
+	sprint (self, "Weapon View : Left");
 	W_SetCurrentAmmo();
 	} 
 
 	if (self.impulse == 207)
 	{
 	self.hand = self.hand = 1;
+	sprint (self, "Weapon View : Right");	
 	W_SetCurrentAmmo();
 	} 
 
@@ -2330,6 +2336,7 @@ void() Grenadepick =
 
 
 /*
+
 ============
 W_WeaponFrame
 
