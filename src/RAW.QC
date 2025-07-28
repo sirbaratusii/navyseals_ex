@@ -1,6 +1,8 @@
 void () raw_precache =
  {
    precache_model2("progs/v_m16raw.mdl");
+   precache_model2("progs/v_m16raw_r.mdl");
+   precache_model2("progs/v_m16raw_c.mdl");
    precache_model2("progs/raw.mdl");
  };
 

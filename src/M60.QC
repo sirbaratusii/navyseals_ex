@@ -3,6 +3,7 @@ void () m60_precache =
    precache_model2 ("progs/g_m60.mdl");
    precache_model2 ("progs/v_m60.mdl");
    precache_model2 ("progs/v_m60_r.mdl");
+   precache_model2 ("progs/v_m60_c.mdl");
    precache_sound2 ("weapons/m60fire.wav");
    precache_sound2 ("weapons/chain.wav");
    precache_sound2 ("weapons/m60in.wav");

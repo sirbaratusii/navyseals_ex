@@ -6,6 +6,7 @@ void () mp5sd_precache =
  {
    precache_model2 ("progs/v_mp5sd.mdl");
    precache_model2 ("progs/v_mp5sd_r.mdl");
+   precache_model2 ("progs/v_mp5sd_c.mdl");
    precache_sound2 ("weapons/mp5sd.wav");
  };
 

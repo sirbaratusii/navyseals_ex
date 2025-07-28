@@ -3,6 +3,7 @@ void () m16_precache =
  {
    precache_model2("progs/v_m16.mdl");
    precache_model2("progs/v_m16_r.mdl");
+   precache_model2("progs/v_m16_c.mdl");
    precache_model2("progs/explode.mdl");
    precache_model2("progs/m16gren.mdl");
    precache_sound2("weapons/m16fire.wav");

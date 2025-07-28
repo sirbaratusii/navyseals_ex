@@ -995,7 +995,11 @@ void() W_SetCurrentAmmo =
                   else
                     self.currentammo = self.ammo_shells;
 		// support for handedness
-		  if (self.hand == 1)
+		  if (self.hand == 2)
+		  {
+		  self.weaponmodel = "progs/v_mk23_c.mdl";
+		  }
+		  else if (self.hand == 1)
 		  {
 		  self.weaponmodel = "progs/v_mk23_r.mdl";
 		  }
@@ -1028,7 +1032,11 @@ void() W_SetCurrentAmmo =
                 else
                   self.currentammo = self.ammo_shells;
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_moss_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_moss_r.mdl";
 		}
@@ -1049,7 +1057,11 @@ void() W_SetCurrentAmmo =
               self.currentammo = self.ammo_nails;
 
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_mp5_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_mp5_r.mdl";
 		}
@@ -1083,7 +1095,11 @@ void() W_SetCurrentAmmo =
               self.currentammo = self.ammo_nails;
 
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_mp5sd_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_mp5sd_r.mdl";
 		}
@@ -1114,7 +1130,11 @@ void() W_SetCurrentAmmo =
                 self.currentammo = self.ammo_shells;
 				
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_ashot_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_ashot_r.mdl";
 		}
@@ -1135,7 +1155,11 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.ammo_nails;
 
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_m16_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_m16_r.mdl";
 		}
@@ -1167,7 +1191,11 @@ void() W_SetCurrentAmmo =
                 self.currentammo = self.ammo_rockets;
 				
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_m16raw_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_m16raw_r.mdl";
 		}
@@ -1188,7 +1216,11 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.ammo_rockets;
 				
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_psg1_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_psg1_r.mdl";
 		}
@@ -1226,7 +1258,11 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.ammo_rockets;
 				
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_barret_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_barret_r.mdl";
 		}
@@ -1264,7 +1300,11 @@ void() W_SetCurrentAmmo =
                   self.currentammo = self.ammo_cells;
 				
 		// support for handedness
-		if (self.hand == 1)
+		if (self.hand == 2)
+		{
+		self.weaponmodel = "progs/v_m60_c.mdl";
+		}
+		else if (self.hand == 1)
 		{
 		self.weaponmodel = "progs/v_m60_r.mdl";
 		}
@@ -2302,6 +2342,13 @@ void() ImpulseCommands =
 	{
 	self.hand = self.hand = 1;
 	sprint (self, "Weapon View : Right");	
+	W_SetCurrentAmmo();
+	} 
+
+	if (self.impulse == 208)
+	{
+	self.hand = self.hand = 2;
+	sprint (self, "Weapon View : Center");	
 	W_SetCurrentAmmo();
 	} 
 

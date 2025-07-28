@@ -1,7 +1,6 @@
 void() kbar_precache =
 {
       precache_model2("progs/v_kbar.mdl");
-      precache_model2("progs/v_kbar_r.mdl");
       precache_sound2("weapons/swoosh.wav");
       precache_sound2("weapons/slash.wav");
 };

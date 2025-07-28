@@ -5,6 +5,7 @@ void () mk23_precache =
  {
    precache_model2 ("progs/v_mk23.mdl");
    precache_model2 ("progs/v_mk23_r.mdl");
+   precache_model2 ("progs/v_mk23_c.mdl");
    precache_sound2 ("weapons/mk23in.wav");
    precache_sound2 ("weapons/mk23fire.wav");
    precache_sound2 ("weapons/mk23ric.wav");

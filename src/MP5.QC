@@ -9,6 +9,7 @@ void () mp5_precache =
    precache_sound2 ("weapons/shellht3.wav");
    precache_model2 ("progs/v_mp5.mdl");
    precache_model2 ("progs/v_mp5_r.mdl");
+   precache_model2 ("progs/v_mp5_c.mdl");
    precache_sound2 ("weapons/mp5in.wav");
    precache_sound2 ("weapons/mp5out.wav");
    precache_sound2 ("weapons/mp5fire.wav");
