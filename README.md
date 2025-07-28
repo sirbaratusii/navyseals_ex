@@ -6,15 +6,16 @@ This modification serves as an unofficial patch. Which aims to add in QoL improv
 
 # To-do
 - [ ] Modify the weapon view models to have non-fullbright arms.
-- [ ] Implement support for right-handed and centered weapon views. (Original was only left-handed)
-- [X] Automatic reloading for weapons
+- [ ] Rewrite the reloading functionality to be more simpler?
+- [ ] Implement support for centered weapon views. (Original was only left-handed, right handed was added)
 - [ ] Proper support for Deathmatch 3 rules
-- [X] Map cycle via maplist.txt
 - [ ] Randomize weapon spawns (PSG-1, MP5 had additional pickups, etc)
 - [ ] Chasecam feature
 
 # Known issues
 - Creating a listen server will crash FTEQW (Does not crash QUAKE.EXE v1.08 however)
+- Manual reloading is broken (right-handed weapons)
+- The laser sight is hardcoded for left-handed weapons.
 
 # Credits
 * Minh Le for creating this modification
