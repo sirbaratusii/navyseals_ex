@@ -6,7 +6,7 @@ This modification serves as an unofficial patch. Which aims to add in QoL improv
 
 # To-do
 - [ ] Implement support for right-handed and centered weapon views. (Original was only left-handed)
-- [ ] Automatic reloading for weapons
+- [X] Automatic reloading for weapons
 - [ ] Proper support for Deathmatch 3 rules
 - [X] Map cycle via maplist.txt
 - [ ] Randomize weapon spawns (PSG-1, MP5 had additional pickups, etc)
