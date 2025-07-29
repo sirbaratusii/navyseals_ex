@@ -6,7 +6,6 @@ This modification serves as an unofficial patch. Which aims to add in QoL improv
 
 # Known issues
 - Creating a listen server will crash FTEQW (Does not crash QUAKE.EXE v1.08 however)
-- The laser sight is hardcoded for left-handed weapons.
 
 # Credits
 * Minh Le for creating this modification
