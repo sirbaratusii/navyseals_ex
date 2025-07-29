@@ -3,6 +3,10 @@
 - [ ] Split weapon selection between the Ka-Bar knife and the hand grenades.
 - [ ] Chasecam feature
 - [ ] Fix up flashbang effect (based on the player's gamma instead of a fixed value)
+- [ ] Allow player to cancel reloading half-way before firing
+- [ ] Retain handedness when player dies.
+- [ ] Adjust the laser sight (right-handed)
+- [ ] Prevent grenade priming from getting jammed upon item pickup
 
 # Done
 - [X] Automatic reloading when clip is empty
