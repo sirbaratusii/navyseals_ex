@@ -227,11 +227,12 @@ void() item_megahealth_rot =
 // just blindly subtract the flag off
 	other.items = other.items - (other.items & IT_SUPERHEALTH);
 	
-	if (deathmatch == 1)	// deathmatch 2 is silly old rules
+	if (deathmatch == 1 || deathmatch == 3)
 	{
 		self.nextthink = time + 20;
 		self.think = SUB_regen;
 	}
+
 };
 
 /*
@@ -281,7 +282,7 @@ void() armor_touch =
 
 	self.solid = SOLID_NOT;
 	self.model = string_null;
-	if (deathmatch == 1)
+	if (deathmatch == 1 || deathmatch == 3)
 		self.nextthink = time + 20;
 	self.think = SUB_regen;
 
@@ -422,12 +423,12 @@ void() weapon_touch =
 	best = W_BestWeapon();
 	self = stemp;
      }
-	if (deathmatch == 2 || coop)
+	if (deathmatch == 2 || deathmatch == 3 || coop)
 		leave = 1;
 	else
 		leave = 0;
 
-	if (self.classname == "weapon_nailgun")
+	if ( (self.classname == "weapon_nailgun") && (deathmatch =- 1) )
 	{
 		if (leave && (other.items & IT_NAILGUN) )
 			return;
@@ -445,8 +446,32 @@ void() weapon_touch =
                 }
                 other.ammo_nails = other.ammo_nails + 30;
                 other.mp5clip = 30;
+				
+		self.nextthink = time + 10;
+		self.think = SUB_regen;
         }
-       /*
+
+	else if ( (self.classname == "weapon_nailgun") && (deathmatch =+ 2) )
+	{
+		leave = 1;
+		if (leave && (other.items & IT_NAILGUN) )
+			return;
+		hadammo = other.ammo_nails;
+		// change to mpsd5 if already in possesion
+                if (other.items & IT_NAILGUN)
+                {
+                  new = WP_MP5;
+                  new = WP_MP5SD;
+                  newitem = IT_NAILGUN;
+                  self.netname = "H&K MP5-SD";
+                }
+                other.ammo_nails = other.ammo_nails + 30;
+                other.mp5clip = 30;
+		self.nextthink = time + 5;
+		self.think = SUB_regen;
+        }	
+	
+/*       
 	else if (self.classname == "weapon_mp5sd")
 	{
 		if (leave && (other.items & IT_MP5SD) )
@@ -457,7 +482,7 @@ void() weapon_touch =
                 other.ammo_nails = other.ammo_nails + 30;
                 other.mp5clip = 30;
         }
-       */
+*/       
 	else if (self.classname == "weapon_supernailgun")
 	{
 		if (leave && (other.items & IT_SUPER_NAILGUN) )
@@ -477,7 +502,8 @@ void() weapon_touch =
 		other.ammo_shells = other.ammo_shells + 5;
                 other.mossclip = 8;
         }
-	else if (self.classname == "weapon_rocketlauncher")
+//	else if (self.classname == "weapon_rocketlauncher")
+	else if ( (self.classname == "weapon_rocketlauncher") && (deathmatch =- 1) )
 	{
 		if (leave && (other.items & IT_ROCKET_LAUNCHER) )
 			return;
@@ -492,11 +518,29 @@ void() weapon_touch =
                 {
                   new = WP_PSG1;
                   newitem = IT_ROCKET_LAUNCHER;
-                }
+                }								
                 other.ammo_rockets = other.ammo_rockets + 5;
                 other.psg1clip = 20;
+		self.nextthink = time + 10;
+		self.think = SUB_regen;
         }
-       /*
+
+	else if ( (self.classname == "weapon_rocketlauncher") && (deathmatch =+ 2) )
+	{
+		if (leave && (other.items & IT_ROCKET_LAUNCHER) )
+			return;
+		hadammo = other.ammo_rockets;
+                // give barrett if already has psg1
+                  new = WP_PSG1;
+				  new = WP_BARRETT;
+                  newitem = IT_ROCKET_LAUNCHER;
+                other.ammo_rockets = other.ammo_rockets + 5;
+                other.psg1clip = 20;
+		self.nextthink = time + 5;
+		self.think = SUB_regen;
+        }
+       
+/*	   
         else if (self.classname == "weapon_barrett")
 	{
 		if (leave && (other.items & IT_BARRETT) )
@@ -506,7 +550,8 @@ void() weapon_touch =
 		other.ammo_rockets = other.ammo_rockets + 5;
                 other.psg1clip = 20;
         }
-       */
+*/
+       
         else if (self.classname == "weapon_grenadelauncher")
 	{
 		if (leave && (other.items & IT_GRENADE_LAUNCHER) )
@@ -611,7 +656,6 @@ void() weapon_touch =
 	activator = other;
 	SUB_UseTargets();				// fire all targets / killtargets
 };
-
 
 /*QUAKED weapon_supershotgun (0 .5 .8) (-16 -16 0) (16 16 32)
 */
@@ -844,6 +888,7 @@ void() item_shells =
 void() item_spikes =
 {
 	self.touch = ammo_touch;
+//	self.touch = mp5sd_touch;
 
 	if (self.spawnflags & WEAPON_BIG2)
 	{
